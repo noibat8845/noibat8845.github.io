@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LightningGodAnt ⚡</title>
+    <title>Lightning God Ant</title>
 
     <style>
         * {
@@ -37,7 +37,7 @@
 
 <body>
 
-    <img src="LTA.jpg" alt="LightningGodAnt">
+    <img src="LTA.jpg" alt="Lightning God Ant">
 
     <audio id="thunder" loop preload="auto">
         <source src="thunder-sound-effect-made-with-Voicemod.mp3" type="audio/mpeg">
@@ -46,12 +46,17 @@
     <script>
         const thunder = document.getElementById("thunder");
 
-        document.addEventListener("click", function startThunder() {
-            thunder.play();
-            document.removeEventListener("click", startThunder);
-        });
+        async function startThunder() {
+            try {
+                await thunder.play();
+                thunder.loop = true;
+            } catch (error) {
+                console.error("Audio playback failed:", error);
+            }
+        }
+
+        document.addEventListener("click", startThunder, { once: true });
     </script>
 
 </body>
 </html>
-
