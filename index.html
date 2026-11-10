@@ -4,30 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LightningGodAnt</title>
+    <title>LightningGodAnt ⚡</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: black;
+            cursor: pointer;
+        }
+
         body {
-            background: #101018;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 55px;
-            color: #ffd700;
-        }
-
-        p {
-            color: #aaa;
-            font-size: 20px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
+
 <body>
-    <h1>LightningGodAnt ⚡</h1>
-    <p>Welcome to the internet.</p>
-    <p>There is absolutely no reason for this website to exist.</p>
+
+    <img src="LTA.jpg" alt="LightningGodAnt">
+
+    <audio id="thunder" loop preload="auto">
+        <source src="thunder-sound-effect-made-with-Voicemod.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const thunder = document.getElementById("thunder");
+
+        document.addEventListener("click", function startThunder() {
+            thunder.play();
+            document.removeEventListener("click", startThunder);
+        });
+    </script>
+
 </body>
 </html>
+
